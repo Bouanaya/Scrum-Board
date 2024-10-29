@@ -21,6 +21,7 @@
     <!-- ================== END core-css ================== -->
   </head>
   <body>
+    <div class="noshow">
     <!-- BEGIN #app -->
     <div id="app" class="app-without-sidebar">
       <!-- BEGIN #content -->
@@ -37,28 +38,42 @@
           </div>
 
           <div class="ms-auto">
-            <a
-              href="#modal-task"
-              data-bs-toggle="modal"
+            <button
+               
+               onclick="openModel()"
               class="btn btn-success btn-rounded px-4 rounded-pill"
               ><i class="fa fa-plus fa-lg me-2 ms-n2 text-success-900"></i> Add
-              Task</a
+              Task</button
             >
           </div>
         </div>
 
         <div class="row">
           <div class="col-xl-4 col-lg-6">
-            <div class="panel panel-inverse ">
+            <div class="panel panel-inverse">
               <div class="panel-heading bg-primary">
-                <h4 class="panel-title">To do (<span id="to-do-tasks-count">5</span>)</h4>
+                <h4 class="panel-title">
+                  To do (<span id="to-do-tasks-count">5</span>)
+                </h4>
               </div>
-              <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="to-do-tasks">
+              <div
+                class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0"
+                id="to-do-tasks"
+              >
                 <!-- TO DO TASKS HERE -->
-                <button class="d-flex p-3 border-0 ">
+                <button class="d-flex p-3 border-0">
                   <div class="pe-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle-fill text-success" viewBox="0 0 16 16">
-                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-question-circle-fill text-success"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
+                      />
                     </svg>
                   </div>
                   <div class="">
@@ -66,7 +81,9 @@
                       Keep all the updated requirements in one place
                     </div>
                     <div class="">
-                      <div class="text-start text-secondary">#1 created in 2022-10-08</div>
+                      <div class="text-start text-secondary">
+                        #1 created in 2022-10-08
+                      </div>
                       <div
                         class="text-start"
                         title="There is hardly anything more frustrating than having to look for current requirements in tens of comments under the actual description or having to decide which commenter is actually authorized to change the requirements. The goal here is to keep all the up-to-date requirements and details in the main/primary description of a task. Even though the information in comments may affect initial criteria, just update this primary description accordingly."
@@ -81,7 +98,7 @@
                     </div>
                   </div>
                 </button>
-                </div>
+              </div>
             </div>
           </div>
           <div class="col-xl-4 col-lg-6">
@@ -91,13 +108,28 @@
                   In Progress (<span id="in-progress-tasks-count">4</span>)
                 </h4>
               </div>
-              <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="in-progress-tasks">
+              <div
+                class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0"
+                id="in-progress-tasks"
+              >
                 <!-- IN PROGRESS TASKS HERE -->
-                <button class="d-flex p-3 border-0 ">
+                <button class="d-flex p-3 border-0">
                   <div class="pe-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise text-success" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-                      <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-arrow-clockwise text-success"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+                      />
+                      <path
+                        d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
+                      />
                     </svg>
                   </div>
                   <div class="">
@@ -105,7 +137,9 @@
                       Keep all the updated requirements in one place
                     </div>
                     <div class="">
-                      <div class="text-start text-secondary">#1 created in 2022-10-08</div>
+                      <div class="text-start text-secondary">
+                        #1 created in 2022-10-08
+                      </div>
                       <div
                         class="text-start"
                         title="There is hardly anything more frustrating than having to look for current requirements in tens of comments under the actual description or having to decide which commenter is actually authorized to change the requirements. The goal here is to keep all the up-to-date requirements and details in the main/primary description of a task. Even though the information in comments may affect initial criteria, just update this primary description accordingly."
@@ -126,14 +160,28 @@
           <div class="col-xl-4 col-lg-6">
             <div class="panel panel-inverse">
               <div class="panel-heading bg-success">
-                <h4 class="panel-title">Done (<span id="done-tasks-count">4</span>)</h4>
+                <h4 class="panel-title">
+                  Done (<span id="done-tasks-count">4</span>)
+                </h4>
               </div>
-              <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="done-tasks">
+              <div
+                class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0"
+                id="done-tasks"
+              >
                 <!-- DONE TASKS HERE -->
-                <button class="d-flex p-3 border-0 ">
+                <button class="d-flex p-3 border-0">
                   <div class="pe-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check-fill text-success" viewBox="0 0 16 16">
-                      <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-calendar-check-fill text-success"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708"
+                      />
                     </svg>
                   </div>
                   <div class="">
@@ -141,7 +189,9 @@
                       Keep all the updated requirements in one place
                     </div>
                     <div class="">
-                      <div class="text-start text-secondary">#1 created in 2022-10-08</div>
+                      <div class="text-start text-secondary">
+                        #1 created in 2022-10-08
+                      </div>
                       <div
                         class="text-start"
                         title="There is hardly anything more frustrating than having to look for current requirements in tens of comments under the actual description or having to decide which commenter is actually authorized to change the requirements. The goal here is to keep all the up-to-date requirements and details in the main/primary description of a task. Even though the information in comments may affect initial criteria, just update this primary description accordingly."
@@ -175,8 +225,72 @@
     <!-- END #app -->
 
     <!-- TASK MODAL -->
-    <div class="modal fade" id="modal-task">
+    <div class="show" style="display: none;" id="show">
       <!-- Modal content goes here -->
+      <div class="container  d-flex justify-content-center align-items-center w-40 w-md-50  w-full ">
+        <div class="w-100 bg-white p-3 mt-2 rounded ">
+          <div class="d-flex justify-content-between">
+        <h2>Add Task</h2>
+        <button onclick="openModel()" class="border-0 bg-white"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+          <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+        </svg></button>
+        
+      </div>
+        <form>
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                placeholder="Enter your title"
+              />
+            <label for="checkbox1" class="form-label">Type</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Fueture
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Bug
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="select1" class="form-label">Priority</label>
+            <select class="form-select" id="select1">
+              <option selected>please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="select2" class="form-label">Status</label>
+            <select class="form-select" id="select2">
+              <option selected>please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" />
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-secondary" onclick="openModel()">Cancel</button>
+        </form>
+      </div>
+      </div>
+    </div>
     </div>
 
     <!-- ================== BEGIN core-js ================== -->

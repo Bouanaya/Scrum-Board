@@ -8,4 +8,21 @@
     background-size: 360px;
     background-position: right bottom;
 }
+.w-40 { width: 40%; }
 .green-border { border:2px solid  #7cedff ; }
+.show{
+    position: absolute;
+    top: 0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+    background-color: #10101073;
+}
+.noshow{
+    position:relative;
+}
+@media(max-Width:1024px){
+    .w-full{
+        width: 100%;
+    }
+}
