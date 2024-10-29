@@ -6,8 +6,6 @@ const openModel = () => {
         btnOpen.style.display ="block"
         show = 1
         console.log("hhhhhh");
-        
-
     }
     else {
         btnOpen.style.display = "none"
