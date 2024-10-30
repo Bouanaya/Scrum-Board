@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.addEventListener('input', function() {
         let allFilled = true;
-        const inputs = form.querySelectorAll('input');
+        const inputs = form.querySelectorAll('.botn');
         inputs.forEach(function(input) {
             if (input.value === '') {
                 allFilled = false;
