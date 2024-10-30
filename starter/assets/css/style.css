@@ -21,8 +21,10 @@
 .noshow{
     position:relative;
 }
+.disabled { background-color: #ccc; cursor: not-allowed; }
 @media(max-Width:1024px){
     .w-full{
         width: 100%;
     }
 }
+
