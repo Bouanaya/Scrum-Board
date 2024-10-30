@@ -1,11 +1,11 @@
 // validate button
 document.addEventListener('DOMContentLoaded', function() {
-    var form = document.getElementById('demo-form');
-    var submitButton = document.getElementById('submitBtn');
+    const form = document.getElementById('demo-form');
+    const submitButton = document.getElementById('submitBtn');
 
     form.addEventListener('input', function() {
         let allFilled = true;
-        var inputs = form.querySelectorAll('input');
+        const inputs = form.querySelectorAll('input');
         inputs.forEach(function(input) {
             if (input.value === '') {
                 allFilled = false;
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Trigger the input event to check the initial state
-    var event = new Event('input');
+    const event = new Event('input');
     form.dispatchEvent(event);
 });
 
