@@ -1,39 +1,26 @@
 // validate button
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('demo-form');
     const submitButton = document.getElementById('submitBtn');
+    const ubdatebtn = document.querySelector("#ubdatebtn")
 
-    form.addEventListener('input', function() {
+
+    form.addEventListener('input', function () {
         let allFilled = true;
         const inputs = form.querySelectorAll('.botn');
-        inputs.forEach(function(input) {
+        inputs.forEach(function (input) {
             if (input.value === '') {
                 allFilled = false;
-                console.log("hhhhhhhhhhhh");
                 return false;
             }
         });
         submitButton.disabled = !allFilled;
+        ubdatebtn.disabled = !allFilled;
+
     });
 
-    // Trigger the input event to check the initial state
-    const event = new Event('input');
-    form.dispatchEvent(event);
+
+
+
 });
 
-const btnOpen = document.getElementById("show");
-var show = 0;
-
-const openModel = () => {
-    if (show == 0) {
-        btnOpen.style.display ="block"
-        show = 1
-        
-    }
-    else {
-        btnOpen.style.display = "none"
-        show = 0
-    }
- 
-    
-}

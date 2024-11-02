@@ -21,14 +21,27 @@
 .noshow{
     position:relative;
 }
+.white-space{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bg-succes{
+    background-color:#00a945;
+}
 .disabled { background-color: #ccc; cursor: not-allowed; }
 @media(max-Width:1024px){
     .w-full{
         width: 100%;
+
+    }
+    .h-full{
+        height: 100%;
     }
     .show{
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.559);
         overflow: hidden;
 }
+
 }
 
