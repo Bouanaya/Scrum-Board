@@ -4,14 +4,18 @@ const submitBtn = document.querySelector("#submitBtn")
 const ubdatebtn = document.querySelector("#ubdatebtn")
 const btn = document.getElementById("btn")
 const parent = document.querySelector(".parent")
+const parent1 = document.querySelector(".parent1")
+const parent2 = document.querySelector(".parent2")
 const titleList = document.getElementById('title');
 const radios = document.querySelectorAll('input[name="flexRadioDefault"]');
+const drag = document.querySelectorAll('.drag');
 const Priority = document.getElementById("select1")
 const Priority1 = document.getElementById("select2")
 const dateTask = document.getElementById("date")
 const description = document.getElementById("description")
 const mySpan = document.querySelector("#to-do-tasks-count")
 let count = 0
+let currentTaskId;
 
 // Fonction pour rafraîchir l'affichage des tâches
 const btnOpen = document.getElementById("show");
@@ -60,7 +64,8 @@ const renderTasks = () => {
   tasks.forEach(task => {
     const btn = document.createElement('div');
     btn.dataset.id = task.id;
-    btn.className = "d-flex p-3 border-top border-primary border-0 btnid";
+    btn.className = "d-flex p-3 border-top border-primary border-0 btnid   ";
+    
     btn.innerHTML = `
       <div class="pe-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle-fill text-success" viewBox="0 0 16 16">
@@ -68,10 +73,10 @@ const renderTasks = () => {
         </svg>
       </div>
       <div>
-        <div class="text-start fs-5 fw-bold text-break">${task.text}</div>
+        <div class="text-start fs-5 fw-bold text-break ">${task.text}</div>
         <div>
           <div class="text-start text-secondary">#1 created on ${task.date}</div>
-          <div class="text-start text-break">${task.description}</div>
+          <div class="text-start text-break white-space">${task.description}</div>
         </div>
         <div>
       
@@ -128,7 +133,7 @@ function deleteTask(taskId) {
       renderTasks();
       mySpan.textContent = tasks.length;
       Swal.fire(
-        'Deleted!',
+        'Deleted!', 
         'Your task has been deleted.',
         'success'
       );
@@ -208,7 +213,22 @@ const updateTask = () => {
 }
 
 
+drag.forEach((e )=> { e.addEventListener("dragstart",()=>{
+  // e.classList.add('dragging')
+  console.log("hhhhhhhhhhh");
+  
+})
+})
 
+const removeall =()=>{
+  console.log("hhhh");
+  
+  tasks = tasks.value = []
+  renderTasks()
+  console.log(tasks);
+  
+}
  
+
  
  

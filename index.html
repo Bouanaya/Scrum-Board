@@ -57,6 +57,11 @@
                   <h4 class="panel-title">
                     To do (<span id="to-do-tasks-count" class="todo"></span>)
                   </h4>
+                  <button type="button" class="btn btn-danger"
+                  onclick="removeall()"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  Delate all
+</button>
                 </div>
                 <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0 parent" id="to-do-tasks">
                   <!-- TO DO TASKS HERE -->
@@ -112,7 +117,7 @@
                     In Progress (<span id="in-progress-tasks-count">4</span>)
                   </h4>
                 </div>
-                <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="in-progress-tasks">
+                <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0 parent1 " id="in-progress-tasks">
                   <!-- IN PROGRESS TASKS HERE -->
                    
                 </div>
@@ -125,7 +130,7 @@
                     Done (<span id="done-tasks-count">4</span>)
                   </h4>
                 </div>
-                <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0" id="done-tasks">
+                <div class="list-group list-group-flush rounded-bottom overflow-hidden panel-body p-0 parent2 " id="done-tasks"  >
                   <!-- DONE TASKS HERE -->
                   
                 </div>
