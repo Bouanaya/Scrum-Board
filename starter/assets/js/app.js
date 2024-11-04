@@ -226,6 +226,7 @@ const removeall =()=>{
   tasks = tasks.value = []
   renderTasks()
   console.log(tasks);
+  mySpan.textContent = tasks.length;
   
 }
  
